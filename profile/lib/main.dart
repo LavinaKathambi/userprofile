@@ -5,7 +5,7 @@ void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Color(0xffffc801),
       body: Stack(
         children: [
 // Back Icon
@@ -14,24 +14,24 @@ void main() {
             left: 20,
             child: Icon(
               Icons.arrow_back,
-              color: Colors.black,
+              color: Color(0xffececec),
               size: 30,
             ),
           ),
 // Edit Icon
-          // Positioned(
-          //   top: 50,
-          //   right: 20,
-          //   child: Icon(
-          //     Icons.edit,
-          //     color: Colors.black,
-          //     size: 30,
-          //   ),
-          // ),
+          Positioned(
+            top: 50,
+            right: 20,
+            child: Icon(
+              Icons.edit,
+              color: Color(0xffececec),
+              size: 30,
+            ),
+          ),
           Center(
             child: Padding(
               padding: const EdgeInsets.only(
-                  left: 50, right: 50, bottom: 20, top: 20),
+                  left: 50, right: 50, bottom: 20, top: 10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,15 +42,15 @@ void main() {
                   ),
                   SizedBox(height: 20),
                   Text('Ehis Pasiqu',
-                      style: GoogleFonts.lato(
-                          color: Colors.black,
+                      style: GoogleFonts.poppins(
+                          color: Color(0xff385a65),
                           fontWeight: FontWeight.w600,
                           fontSize: 25)),
                   SizedBox(height: 5),
                   Text(
                     'Kigali',
-                    style: GoogleFonts.lato(
-                      color: Colors.black,
+                    style: GoogleFonts.poppins(
+                      color: Color(0xff385a65),
                       fontWeight: FontWeight.w300,
                       fontSize: 15,
                       fontStyle: FontStyle.italic,
@@ -69,7 +69,7 @@ void main() {
                   //   child: Center(
                   //     child: Text(
                   //       'Upgarde to Premium',
-                  //       style: GoogleFonts.lato(
+                  //       style: GoogleFonts.poppins(
                   //         fontSize: 20,
                   //         fontWeight: FontWeight.w700,
                   //       ),
@@ -98,7 +98,7 @@ void main() {
                   ProfileMenuItem(
                     text: 'LogOut',
                     icon: Icons.logout,
-                    arrowShown: false,
+                    arrowShown: true,
                   ),
                 ],
               ),
@@ -111,8 +111,7 @@ void main() {
 }
 
 class ProfileMenuItem extends StatelessWidget {
-  ProfileMenuItem(
-      {required this.text, required this.icon, required this.arrowShown});
+  ProfileMenuItem({this.text, this.icon, this.arrowShown});
   final String text;
   final IconData icon;
   final bool arrowShown;
@@ -121,13 +120,13 @@ class ProfileMenuItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: Color(0xffececec),
           borderRadius: BorderRadius.all(
             Radius.circular(30),
           ),
         ),
         height: 50,
-        width: 500,
+        width: 350,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -137,17 +136,17 @@ class ProfileMenuItem extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 20),
                   child: Icon(
                     icon,
-                    size: 35,
-                    color: Colors.white,
+                    size: 20,
+                    color: Color(0xff1b2e35),
                   ),
                 ),
                 SizedBox(width: 10),
                 Text(
                   '$text',
-                  style: GoogleFonts.lato(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
+                  style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff1b2e35),
                   ),
                 ),
               ],
@@ -157,8 +156,8 @@ class ProfileMenuItem extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 12),
                     child: Icon(
                       Icons.arrow_forward,
-                      size: 30,
-                      color: Colors.white,
+                      size: 20,
+                      color: Color(0xff1b2e35),
                     ),
                   )
                 : Container(),
